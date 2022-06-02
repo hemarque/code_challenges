@@ -18,10 +18,17 @@ public class FizzBuzzTest {
         assertEquals("Fizz", fizzbuzzOf(3));
     }
 
+    @Test
+    public void fizzbuzzOf5isBuzz() {
+        assertEquals("Buzz", fizzbuzzOf(5));
+    }
+
     private String fizzbuzzOf(int number) {
         String fizzbuzz;
         if(number == 3){
             fizzbuzz = "Fizz";
+        }else if(number == 5){
+            fizzbuzz = "Buzz";
         }else{
             fizzbuzz = number + "";
         }
