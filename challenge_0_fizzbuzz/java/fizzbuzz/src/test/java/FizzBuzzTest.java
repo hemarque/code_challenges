@@ -38,16 +38,21 @@ public class FizzBuzzTest {
         assertEquals("FizzBuzz", fizzbuzzOf(15));
     }
 
+    @Test
+    public void fizzbuzzOf30isFizzBuzz() {
+        assertEquals("FizzBuzz", fizzbuzzOf(30));
+    }
+
     private String fizzbuzzOf(int number) {
-        String fizzbuzz;
-        if(number == 15){
-            fizzbuzz = "FizzBuzz";
-        }else if(number % 3 == 0){
-            fizzbuzz = "Fizz";
-        }else if(number % 5 == 0){
-            fizzbuzz = "Buzz";
-        }else{
-            fizzbuzz = number + "";
+        String fizzbuzz = "";
+        if(number % 3 == 0){
+            fizzbuzz += "Fizz";
+        }
+        if(number % 5 == 0){
+            fizzbuzz += "Buzz";
+        }
+        if(!(number % 3 == 0)&&!(number % 5 == 0)){
+            fizzbuzz += number;
         }
         return fizzbuzz;
     }
