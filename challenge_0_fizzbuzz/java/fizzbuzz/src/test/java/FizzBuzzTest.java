@@ -23,9 +23,14 @@ public class FizzBuzzTest {
         assertEquals("Buzz", fizzbuzzOf(5));
     }
 
+    @Test
+    public void fizzbuzzOf6isFizz() {
+        assertEquals("Fizz", fizzbuzzOf(6));
+    }
+
     private String fizzbuzzOf(int number) {
         String fizzbuzz;
-        if(number == 3){
+        if(number % 3 == 0){
             fizzbuzz = "Fizz";
         }else if(number == 5){
             fizzbuzz = "Buzz";
