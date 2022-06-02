@@ -45,16 +45,24 @@ public class FizzBuzzTest {
 
     private String fizzbuzzOf(int number) {
         String fizzbuzz = "";
-        if(number % 3 == 0){
+        if(isMultipleOf3(number)){
             fizzbuzz += "Fizz";
         }
-        if(number % 5 == 0){
+        if(isMultipleOf5(number)){
             fizzbuzz += "Buzz";
         }
-        if(!(number % 3 == 0)&&!(number % 5 == 0)){
+        if(!isMultipleOf3(number) &&!isMultipleOf5(number)){
             fizzbuzz += number;
         }
         return fizzbuzz;
+    }
+
+    private boolean isMultipleOf3(int number) {
+        return number % 3 == 0;
+    }
+
+    private boolean isMultipleOf5(int number) {
+        return number % 5 == 0;
     }
 
 }
