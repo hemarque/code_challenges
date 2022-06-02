@@ -33,9 +33,16 @@ public class FizzBuzzTest {
         assertEquals("Buzz", fizzbuzzOf(10));
     }
 
+    @Test
+    public void fizzbuzzOf15isFizzBuzz() {
+        assertEquals("FizzBuzz", fizzbuzzOf(15));
+    }
+
     private String fizzbuzzOf(int number) {
         String fizzbuzz;
-        if(number % 3 == 0){
+        if(number == 15){
+            fizzbuzz = "FizzBuzz";
+        }else if(number % 3 == 0){
             fizzbuzz = "Fizz";
         }else if(number % 5 == 0){
             fizzbuzz = "Buzz";
