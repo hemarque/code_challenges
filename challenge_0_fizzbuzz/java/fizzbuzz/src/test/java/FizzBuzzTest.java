@@ -3,44 +3,46 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 public class FizzBuzzTest {
+    private final Fizzbuzz fizzbuzz = new Fizzbuzz();
+
     @Test
     public void fizzbuzzOf1is1() {
-        assertEquals("1", fizzbuzzOf(1));
+        assertEquals("1", fizzbuzz.fizzbuzzOf(1));
     }
 
     @Test
     public void fizzbuzzOf2is2() {
-        assertEquals("2", fizzbuzzOf(2));
+        assertEquals("2", fizzbuzz.fizzbuzzOf(2));
     }
 
     @Test
     public void fizzbuzzOf3isFizz() {
-        assertEquals("Fizz", fizzbuzzOf(3));
+        assertEquals("Fizz", fizzbuzz.fizzbuzzOf(3));
     }
 
     @Test
     public void fizzbuzzOf5isBuzz() {
-        assertEquals("Buzz", fizzbuzzOf(5));
+        assertEquals("Buzz", fizzbuzz.fizzbuzzOf(5));
     }
 
     @Test
     public void fizzbuzzOf6isFizz() {
-        assertEquals("Fizz", fizzbuzzOf(6));
+        assertEquals("Fizz", fizzbuzz.fizzbuzzOf(6));
     }
 
     @Test
     public void fizzbuzzOf10isBuzz() {
-        assertEquals("Buzz", fizzbuzzOf(10));
+        assertEquals("Buzz", fizzbuzz.fizzbuzzOf(10));
     }
 
     @Test
     public void fizzbuzzOf15isFizzBuzz() {
-        assertEquals("FizzBuzz", fizzbuzzOf(15));
+        assertEquals("FizzBuzz", fizzbuzz.fizzbuzzOf(15));
     }
 
     @Test
     public void fizzbuzzOf30isFizzBuzz() {
-        assertEquals("FizzBuzz", fizzbuzzOf(30));
+        assertEquals("FizzBuzz", fizzbuzz.fizzbuzzOf(30));
     }
 
     @Test
@@ -145,37 +147,7 @@ public class FizzBuzzTest {
                 "98\n" +
                 "Fizz\n" +
                 "Buzz\n";
-        assertEquals(expected, getFirst100FizzBuzz());
-    }
-
-    private String getFirst100FizzBuzz() {
-        String first100 ="";
-        for(int number=1;number<=100;number++){
-            first100 += fizzbuzzOf(number)+"\n";
-        }
-        return first100;
-    }
-
-    private String fizzbuzzOf(int number) {
-        String fizzbuzz = "";
-        if(isMultipleOf3(number)){
-            fizzbuzz += "Fizz";
-        }
-        if(isMultipleOf5(number)){
-            fizzbuzz += "Buzz";
-        }
-        if(!isMultipleOf3(number) &&!isMultipleOf5(number)){
-            fizzbuzz += number;
-        }
-        return fizzbuzz;
-    }
-
-    private boolean isMultipleOf3(int number) {
-        return number % 3 == 0;
-    }
-
-    private boolean isMultipleOf5(int number) {
-        return number % 5 == 0;
+        assertEquals(expected, fizzbuzz.getFirst100FizzBuzz());
     }
 
 }
